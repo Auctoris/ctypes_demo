@@ -1,6 +1,6 @@
 import ctypes
 
-lib = ctypes.cdll.LoadLibrary('./libfoo.so')
+lib = ctypes.cdll.LoadLibrary('./libfoo.dylib')
 
 class Foo(object):
     def __init__(self, val):
