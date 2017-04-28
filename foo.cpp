@@ -1,6 +1,6 @@
 #include <iostream>
 
-// A simple class with a constuctor and one method...
+// A simple class with a constuctor and some methods...
 
 class Foo
 {
