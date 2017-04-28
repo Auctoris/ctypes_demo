@@ -1,6 +1,14 @@
-# Building
+# About
+
+This is an example of building a (simple) C++ class and interfacing it to Python via ctypes.
+
+## Building
 
 To build use:
+cmake .
+make
 
-g++ -c -fPIC foo.cpp -o foo.o
-g++ -shared -W1,-soname,libfoo.so -o libfoo.so foo.o
+## Running
+
+To run the demo run:
+python test.py
