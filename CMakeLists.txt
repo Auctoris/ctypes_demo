@@ -5,4 +5,4 @@ set(CMAKE_MACOSX_RPATH 1)
 
 project (foo)
 set (SOURCE foo.cpp)
-add_library(foo SHARED ${SOURCE})
+add_library(foo MODULE ${SOURCE})
