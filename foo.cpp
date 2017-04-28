@@ -25,7 +25,7 @@ void Foo::bar()
 
 extern "C"
 {
-    Foo* Foo_new(int n){return new Foo(n);}
+    Foo* Foo_new(int n) {return new Foo(n);}
     void Foo_bar(Foo* foo) {foo->bar();}
 }
 
