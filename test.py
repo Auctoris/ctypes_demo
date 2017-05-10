@@ -6,6 +6,7 @@ f=Foo(5)
 # Calling f.bar() will print a message including the value...
 print ('f=Foo(5)')
 print ('\t'),
+# Note that Foo.bar() has it's own print routine (via std::cout).
 f.bar()
 print
 
