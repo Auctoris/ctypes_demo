@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
 
 // A simple class with a constuctor and some methods...
 
@@ -6,7 +8,7 @@ class Foo
 {
     public:
         Foo(int);
-        void bar();
+        const char* bar();
         int foobar(int);
     private:
         int val;
@@ -17,9 +19,17 @@ Foo::Foo(int n)
     val = n;
 }
 
-void Foo::bar()
+const char* Foo::bar()
 {
-    std::cout << "Value is " << val << std::endl;
+    int i;
+    std::string s;
+    std::string msg;
+    
+    s = std::to_string(val);
+    msg = "The value is " + s;
+    i = msg.length();
+    const char* rv = msg.c_str();
+    return rv;
 }
 
 int Foo::foobar(int n)
@@ -32,7 +42,7 @@ int Foo::foobar(int n)
 extern "C"
 {
     Foo* Foo_new(int n) {return new Foo(n);}
-    void Foo_bar(Foo* foo) {foo->bar();}
+    const char* Foo_bar(Foo* foo) {return foo->bar();}
     int Foo_foobar(Foo* foo, int n) {return foo->foobar(n);}
 }
 
