@@ -1,4 +1,4 @@
-"""foo.py – a simple demo of importing a calss from C++"""
+"""foo.py - a simple demo of importing a calss from C++"""
 import ctypes
 
 lib = ctypes.cdll.LoadLibrary('./libfoo.so')
