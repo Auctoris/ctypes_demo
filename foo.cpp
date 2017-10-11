@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
+#include <string>
 
 // A simple class with a constuctor and some methods...
 
@@ -21,13 +22,11 @@ Foo::Foo(int n)
 
 const char* Foo::bar()
 {
-    int i;
     std::string s;
     std::string msg;
     
     s = std::to_string(val);
     msg = "The value is " + s;
-    i = msg.length();
     const char* rv = msg.c_str();
     return rv;
 }
