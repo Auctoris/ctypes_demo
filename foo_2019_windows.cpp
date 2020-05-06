@@ -44,4 +44,12 @@ extern "C"
     __declspec(dllexport) Foo* Foo_new(int n) {return new Foo(n);}
     __declspec(dllexport) const char* Foo_bar(Foo* foo) {return foo->bar();}
     __declspec(dllexport) int Foo_foobar(Foo* foo, int n) {return foo->foobar(n);}
+    __declspec(dllexport) void Foo_delete(Foo* foo)
+    {
+        if (foo)
+        {
+            delete foo;
+            foo = nullptr;
+        }
+    }
 }

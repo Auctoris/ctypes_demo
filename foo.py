@@ -14,6 +14,8 @@ class Foo(object):
 
         lib.Foo_foobar.argtypes = [ctypes.c_void_p, ctypes.c_int]
         lib.Foo_foobar.restype = ctypes.c_int
+        
+        lib.Foo_delete.argtypes = [ctypes.c_void_p]
 
         self.obj = lib.Foo_new(val)
 
@@ -27,3 +29,7 @@ class Foo(object):
         """foobar takes an integer, and adds it to the value in the Foo class
         - returning the result"""
         return lib.Foo_foobar(self.obj, val)
+        
+    def __del__(self):
+        """destruct unmanaged object"""
+        return lib.Foo_delete(self.obj)
