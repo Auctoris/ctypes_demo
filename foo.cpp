@@ -43,5 +43,13 @@ extern "C"
     Foo* Foo_new(int n) {return new Foo(n);}
     const char* Foo_bar(Foo* foo) {return foo->bar();}
     int Foo_foobar(Foo* foo, int n) {return foo->foobar(n);}
+    void Foo_delete(Foo* foo)
+    {
+        if (foo)
+        {
+            delete foo;
+            foo = nullptr;
+        }
+    }
 }
 
